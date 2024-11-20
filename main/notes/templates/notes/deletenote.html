@@ -1,0 +1,16 @@
+{% extends 'base.html' %}
+
+{% block content %}
+    <div class="h-[86vh] w-full flex justify-center items-center">
+        <div class="bg-gray-300 text-black p-10 rounded-lg">
+            <h2>Are you sure you want to delete the note "{{ data.title }}"?</h2>
+            <p>This action cannot be undone.</p>
+
+            <form method="post">
+                {% csrf_token %}
+                <button type="submit" class="bg-gray-200 p-2 mt-4 rounded-lg">Yes, Delete</button>
+                <a href="{% url 'notes' %}" class="bg-blue-300 p-2 ml-2 mt-4 rounded-lg">Cancel</a>
+            </form>
+        </div>
+    </div>
+{% endblock %}

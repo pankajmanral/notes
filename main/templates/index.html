@@ -1,0 +1,12 @@
+{% extends 'base.html' %}
+
+{% block content %}
+
+    <div class="h-[86vh] w-full p-10">
+        <div class="h-full flex justify-center items-center">
+            <h2 class="text-3xl">Your notes are safe with us</h2>
+            <a class="fixed bottom-14 right-14" href="{% url 'login' %}"><button class="bg-gray-300 h-10 px-5 rounded-3xl">Continue...</button></a>
+        </div>
+    </div>
+
+{% endblock %}

@@ -1,0 +1,16 @@
+{% extends 'base.html' %} {% block content %}
+
+<form method="post" class="h-[80vh] flex flex-col justify-center items-center">
+    {% csrf_token %}
+    <div class="border border-black p-3">
+        {% for feilds in form %}
+            <div class="flex border-b mb-2">
+                {{ feilds.errors }}
+                {{ feilds }}
+            </div>
+        {% endfor %}
+    </div>
+    <button type="submit" class="bg-gray-200 rounded-lg px-3 mt-4">Submit</button>
+</form>
+
+{% endblock %}

@@ -1,0 +1,19 @@
+{% extends 'base.html' %} {% block content %}
+
+<div class="h-[86vh] w-full flex justify-center items-center">
+    <form action="" method="post" class="bg-gray-300 min-h-96 w-80 rounded-lg">
+
+        {% csrf_token %}
+
+        <h2 class="text-center mt-4 text-lg">Add note</h2>
+        <div class="flex flex-col px-2 mt-5">
+            <label class="text-lg" for="title">Title</label>
+            <input type="text" class="px-2 py-2 rounded-lg focus:outline-none" autofocus placeholder="Enter title of the note" name="title" id="title">
+            <label class="text-lg mt-3"  for="desc">Description</label>
+            <textarea name="desc" rows="3" class="resize-none px-2 py-2 rounded-lg focus:outline-none" placeholder="Enter description for your note" id="desc"></textarea>
+            <button class="mt-14 ms-44 bg-gray-200 h-10 px-4 rounded-3xl" type="submit">Add Note</button>
+        </div>
+    </form>
+</div>
+
+{% endblock %}

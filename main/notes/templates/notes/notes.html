@@ -1,0 +1,37 @@
+{% extends 'base.html' %}
+
+{% block content %}
+
+    <div class="h-[86vh] w-full p-10">
+        <div class="h-full overflow-auto">
+            <div class="text-3xl sticky top-0 left-0 h-20 flex items-center px-4 bg-white">Your notes are safe with us</div>
+                <div class="grid sm:grid-cols-1 md:grid-cols-3 lg:grid-cols-5 place-content-center p-5">
+                    {% for i in notes %}
+
+                    <div class="bg-gray-300 sm:max-w-sm md:w-52 lg:w-64 w-64 mt-5 rounded-lg">
+                        <h1 class="font-bold text-lg p-2 bg-gray-200 rounded-t-lg">{{i.title}}</h1>
+                        <h2 class="mt-1 p-2">{{i.desc}}</h2>
+                        <div class="mt-2 text-md p-2">
+                            <a href="{% url 'deletenote' i.id %}">
+                                <i class="ri-delete-bin-5-line cursor-pointer"></i>
+                            </a>
+                            <a href="{% url 'updatenote' i.id %}">
+                                <i class="ri-edit-2-line cursor-pointer"></i>
+                            </a>
+                        </div>
+                    </div>     
+                          
+                    {% endfor %}
+                </div>
+            </div>
+        </div>  
+    </div>
+
+    
+
+{% endblock %}
+
+
+
+
+

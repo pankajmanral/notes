@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link href="https://cdn.jsdelivr.net/npm/remixicon@4.3.0/fonts/remixicon.css" rel="stylesheet"/>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <title>Document</title>
+  </head>
+  <body class="h-screen w-full">
+    <nav class="flex justify-between px-9 py-4 text-xl">
+      <div>
+        <a href=""><h1 class="text-xl">iNote</h1></a>
+      </div>
+      <div class="flex text-xl gap-2">
+        <a href="{% url 'addnote' %}">Add Note</a>
+        <i class="ri-file-add-line"></i>
+      </div>
+      <div>
+        <a href="{% url 'logout' %}">
+          <h1>Logout</h1>
+        </a>
+      </div>
+    </nav>
+
+    {% block content %} {% endblock %}
+
+    <footer class="absolute bottom-0 w-full">
+      <h2 class="text-center pb-3">* Made by Pankaj Manral *</h2>
+    </footer>
+  </body>
+</html>
